@@ -1,0 +1,12 @@
+# read the passwords file which contains the token
+
+- name: slack
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+  - name: send msg
+    slack:
+      token: "{{ dsi_token }}"
+      msg: "sent from ansible"
+    delegate_to: localhost

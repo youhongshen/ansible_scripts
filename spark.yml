@@ -1,0 +1,6 @@
+- name: install spark
+  hosts: spark
+  user: "{{ admuser }}"
+  roles:
+  - common
+  - spark

@@ -1,0 +1,4 @@
+- name: install ansible
+  roles:
+  - vagrant
+  - ansible

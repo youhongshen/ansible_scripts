@@ -1,0 +1,17 @@
+# role needs to run with sudo
+
+- name: install python setuptools
+  yum: name=python-setuptools
+
+- name: install pip
+  easy_install: name=pip
+
+- name: yum install other stuff
+  yum: name={{ item }}
+  with_items:
+  - python-devel
+  - gcc
+  - openssl-devel
+
+- name: install ansible
+  pip: name=ansible

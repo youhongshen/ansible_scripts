@@ -1,0 +1,16 @@
+- name: install insecure keypair
+  copy: src={{ item.local_file }} dest=~/.ssh/{{ item.remote_file }} mode={{ item.mode }}
+  with_items:
+  - { 'local_file': vagrant, 'remote_file': id_rsa, 'mode': 0600 }
+  - { 'local_file': vagrant.pub, 'remote_file': id_rsa.pub, 'mode': 0644 }
+
+- name: look up my public key
+  set_fact:
+    my_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  delegate_to: localhost
+  run_once: yes
+
+- name: insert my public key
+  line_in_file:
+    dest: ~/.ssh/authorized_keys
+    line: "{{ my_pub_key }}"

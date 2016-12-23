@@ -1,0 +1,9 @@
+[spark]
+192.168.99.100  hostname=spark1
+
+[vagrant:children]
+spark
+
+[vagrant:vars]
+#vagrant_top_dir=/home/joan/vagrant
+#ansible_ssh_private_key_file={{ vagrant_top_dir }}/{{ hostname }}/.vagrant/machines/default/virtualbox/private_key

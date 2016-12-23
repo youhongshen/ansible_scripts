@@ -1,0 +1,4 @@
+# can overwrite in inventory
+admuser: vagrant
+admuser_home_dir: "/home/{{ admuser }}"
+admuser_downloads_dir: "{{ admuser_home_dir }}/Downloads"

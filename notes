@@ -1,0 +1,16 @@
+to install ansible on centos 7
+-------
+sudo yum install python-setuptools
+sudo easy_install pip
+sudo yum install python-devel
+sudo yum install gcc
+sudo yum install openssl-devel
+sudo pip install ansible
+
+problems
+-------
+- rsync on windows does not work
+
+vagrant boxes
+-------
+- need to gen keys for the vms to talk to each other
